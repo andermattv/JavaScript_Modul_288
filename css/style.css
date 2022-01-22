@@ -1,0 +1,177 @@
+
+
+/* Home */
+
+.row.m-5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .card-img-top {
+    width: 100%;
+}
+
+/* About me */
+
+.g-0{
+    margin-top: 45px;
+}
+
+video{
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+/* Photographs */
+
+.gallery{
+    padding-top: 40px;
+}
+
+.pt-5{
+    margin-bottom: 30px;
+}
+
+/* Socialmedia */
+
+ .display-3{
+     font-size: 25px;
+     font-weight: medium;
+     display: flex;
+     justify-content: center;
+ }
+
+.socialmi a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+
+ .display-1{
+   margin-top: 20px;
+     margin-bottom: 70px;
+     padding-bottom: 20px;
+ }
+
+ /* Gallery */
+
+ #bild{
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+     width: 70%;
+     height: auto;
+ }
+
+ .card{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 90px;
+   margin-bottom: 20px;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+
+.card2{
+  margin-top: 15%;
+}
+
+
+.card-header{
+  font-weight: bold;
+  background-color: white;
+}
+
+
+ #meta{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+ }
+
+ .list-group-item{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+
+/* Pagination */
+
+ .pagination{
+   display: flex;
+   justify-content: center;
+   margin-top: 10%;
+ }
+
+ .page-link{
+   color: black;
+ }
+
+
+
+
+@media screen and (min-width: 800px) {
+
+    /* Title */
+
+   .display-1{
+    margin-top: 20px;
+    }
+
+    /* Socialmedia */
+
+    .socialmi {
+        display: flex;
+        direction: row;
+        justify-content: center;
+        align-items: center;
+}
+
+/* Gallery */
+
+#bild{
+    display: grid;
+    width: 70%;
+    height: auto;
+}
+
+.card{
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card2{
+
+  display: grid;
+  margin-left: 100px;
+  margin-top: 150px;
+  grid-template-columns: auto auto auto auto;
+  grid-row: 1 / span 2;
+}
+
+.card-header{
+  background-color: white;
+  font-weight: bold;
+}
+
+/* Pagination */
+
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+
+.page-link{
+  color: black;
+}
