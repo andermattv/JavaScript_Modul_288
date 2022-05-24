@@ -1,4 +1,6 @@
-"# M288" 
-"# celine_vivien_LB02" 
-"# celine_vivien_LB02" 
-"# celine_vivien_LB02" 
+## M307 LB02
+### Authors
+* Vivien Schmucki
+* Céline Andermatt
+
+
