@@ -1,12 +1,12 @@
-/* Aufgabe:
-  Fügen Sie die notwendigen Selektoren für
-  firstname, lastname, mobile, password2
-*/
+let ALL_INPUT_VALID
 
 const form = document.getElementById('form');
-const username = document.getElementById('username');
+const firstname = document.getElementById('firstname');
+const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
-const password = document.getElementById('password');
+const number = document.getElementById('number');
+
+
 
 // Show input error message
 function showError(input, message) {
@@ -29,15 +29,19 @@ function checkEmail(input) {
     showSuccess(input);
   } else {
     showError(input, 'Email is not valid');
+    ALL_INPUT_VALID = false;
   }
 }
-
-/* Aufgabe:
-    Validieren Sie die Mobile-Nummer ähnlich wie bei der Email mit einer
-    Regular expression (regex). Für eine geeignete regex suchen Sie
-    im Internet nach "javascript regular expression for mobile number".
-*/
-// Check phone is valid
+//Check Phonenumber
+function checkNumber(input) {
+  const re = /^0(2[1-246-7]|3[1-4]|4[13-4]|5[25-6]|6[1-2]|7[15-68-9]|8[17]|91)[0-9]{7}/;
+  if (re.test(input.value.trim())) {
+    showSuccess(input);
+  } else {
+    showError(input, 'This Phone number is not valid.');
+    ALL_INPUT_VALID = false;
+  }
+}
 
 
 // Check required fields
@@ -47,6 +51,7 @@ function checkRequired(inputArr) {
     if (input.value.trim() === '') {
       showError(input, `${getFieldName(input)} is required`);
       isRequired = true;
+      ALL_INPUT_VALID = false;
     } else {
       showSuccess(input);
     }
@@ -62,22 +67,17 @@ function checkLength(input, min, max) {
         input,
         `${getFieldName(input)} must be at least ${min} characters`
     );
+    ALL_INPUT_VALID = false;
   } else if (input.value.length > max) {
     showError(
         input,
         `${getFieldName(input)} must be less than ${max} characters`
     );
+    ALL_INPUT_VALID = false;
   } else {
     showSuccess(input);
   }
 }
-
-/* Aufgabe:
-    Validieren Sie, ob die beiden Passwörter übereinstimmen.
-    Falls sie nicht übereinstimmen, geben Sie (ähnlich wie in den anderen Beispielen)
-    eine Fehlermeldung dem Formular aus.
-*/
-// Check passwords match
 
 // Get fieldname
 function getFieldName(input) {
@@ -85,28 +85,25 @@ function getFieldName(input) {
 }
 
 function validateForm(){
-  if(!checkRequired([username, email, password])){
-    //Aufgabe: Validierung der Länge für Vorname (2 bis 20) und Nachname (2 bis 50)
-    checkLength(username, 3, 15);
-    checkLength(password, 6, 25);
-    /* Aufgabe:
-      Validierung der Telefonnumer ähnlich wie bei der Email mit einer
-      Regular expression (regex). Für eine geeignete regex suchen Sie
-      im Internet nach "javascript regular expression for mobile number"
-    * */
+  if(!checkRequired([firstname, lastname, email, number])){
+    checkLength(firstname, 3, 15);
+    checkLength(lastname, 3, 20);
     checkEmail(email);
-    /* Aufgabe:
-      Validierung Sie die beiden Passwörter, damit password
-      mit password2 übereinstimmt.
-    * */
+    checkNumber(number);
+
   }
 }
 
 
 // Event listeners
 form.addEventListener('submit', function(e) {
+  ALL_INPUT_VALID = true;
   //https://www.w3schools.com/jsref/event_preventdefault.asp
   e.preventDefault();
   //First validate form
   validateForm();
+  if (ALL_INPUT_VALID){
+    alert('Your message was sent')
+  }
+
 });
