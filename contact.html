@@ -132,9 +132,9 @@
         </div>
 
         <p>Genre*</p>
-        <div id="genre">
+        <div id="genre" onsubmit="return (checkForm())" name="userForm">
 
-            <input type="radio" id="portrait" name="genre" value="portrait" checked>
+            <input type="radio" id="portrait" name="genre" value="portrait">
             <label class="auswahl" for="portrait">Portrait</label><br>
 
             <input type="radio" id="produktfotografie" name="genre" value="produktfotografie">
@@ -148,7 +148,9 @@
 
             <input type="radio" id="sonstiges" name="genre" value="sonstiges">
             <label class="auswahl" for="sonstiges">Sonstiges</label><br>
+
         </div>
+
 
         <div class="comment">
             <label for="comment">Comment (optional)</label><br>

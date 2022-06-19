@@ -20,7 +20,7 @@ console.log(`Running at Port ${port}`);
 server.timeout = 1000 * 60 * 2; // 2 minutes
 
 //Warning: Korrekt setzen!!
-const staticPath = './12b_validation_server/03_Solutions/register-server-02/data/';
+const staticPath = './Modul_307/Server/data';
 const registrationFile = staticPath+'registration.json';
 
 
