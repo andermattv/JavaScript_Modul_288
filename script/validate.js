@@ -5,6 +5,7 @@ const firstname = document.getElementById('firstname');
 const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const number = document.getElementById('number');
+const dropdown = document.getElementById('dropdown');
 
 // Show input error message
 function showError(input, message) {
@@ -41,8 +42,14 @@ function checkNumber(input) {
   }
 }
 
-//Check Genre
-
+//Check Dropdown
+function getDropdown(input){
+  if(user === 0){
+    showError(input);
+  } else if (user >= 0){
+    showSuccess(input);
+  }
+}
 
 // Check required fields
 function checkRequired(inputArr) {
@@ -85,11 +92,12 @@ function getFieldName(input) {
 }
 
 function validateForm(){
-  if(!checkRequired([firstname, lastname, email, number])){
+  if(!checkRequired([firstname, lastname, email, number, dropdown])){
     checkLength(firstname, 3, 15);
     checkLength(lastname, 3, 20);
     checkEmail(email);
     checkNumber(number);
+    getDropdown(dropdown);
   }
 }
 

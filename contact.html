@@ -127,34 +127,28 @@
 
         <div class="form-control">
             <label for="number">Phonenumber*</label>
-            <input type="tel" id="number" placeholder="+41 7" />
+            <input type="tel" id="number" placeholder="+41 7X XXX XX XX" />
             <small>Error message</small>
         </div>
 
-        <p>Genre*</p>
-        <div id="genre">
 
-            <input type="radio" id="portrait" name="genre" value="portrait">
-            <label class="auswahl" for="portrait">Portrait</label><br>
-
-            <input type="radio" id="produktfotografie" name="genre" value="produktfotografie">
-            <label class="auswahl" for="produktfotografie">Produktfotografie</label><br>
-
-            <input type="radio" id="architektur" name="genre" value="architektur">
-            <label class="auswahl" for="architektur">Architektur</label><br>
-
-            <input type="radio" id="tier" name="genre" value="tier">
-            <label class="auswahl" for="tier">Tierfotografie</label><br>
-
-            <input type="radio" id="sonstiges" name="genre" value="sonstiges">
-            <label class="auswahl" for="sonstiges">Sonstiges</label><br>
-
+        <div class="form-control">
+            <label for="dropdown">Genre*</label>
+            <select id="dropdown" name="dropdown">
+                <option value="">Portrait</option>
+                <option value="1">Produktfotografie</option>
+                <option value="2">Architektur</option>
+                <option value="3">Tierfotografie</option>
+                <option value="4">Sonstiges</option>
+            </select>
+            <br><small> Error message</small>
         </div>
 
         <div class="comment">
             <label for="comment">Comment (optional)</label><br>
             <textarea name="comment" id="comment" placeholder="Enter comment"></textarea>
         </div>
+
 
         <p class="card-text">*Pflichtfeld</p>
 
