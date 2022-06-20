@@ -25,8 +25,20 @@ function checkEmail(id,input) {
     return result;
 }
 
-//TODO: Check article for throwing errors in node js
-// https://stackoverflow.com/questions/33086247/throwing-an-error-in-node-js
+// Check Phone is valid
+function checkNumber(id,input) {
+    let result = {
+        isNotValid: false,
+        msg: showSuccess(id)
+    }
+    const re = /(\b(0041|0)|\B\+41)(\s?\(0\))?(\s)?[1-9]{2}(\s)?[0-9]{3}(\s)?[0-9]{2}(\s)?[0-9]{2}\b/;
+    if (!re.test(input.trim())) {
+        result = {
+            isNotValid: true,
+            msg: showError(id, 'This Phone number is not valid.')
+        }
+    }
+    return result;
 
 // Check required fields
 function checkRequired(id, input) {
@@ -70,21 +82,6 @@ function checkLength(id, input, min, max) {
     return result;
 }
 
-/* Aufgabe 2:
-    Validieren Sie die Mobile-Nummer ähnlich wie bei der Email mit einer
-    Regular expression (regex). Für eine geeignete regex suchen Sie
-    im Internet nach "javascript regular expression for mobile number".
-*/
-// Check phone is valid
-
-
-/* Aufgabe 3:
-    Validieren Sie, ob die beiden Passwörter übereinstimmen.
-    Falls sie nicht übereinstimmen, geben Sie (ähnlich wie in den anderen Beispielen)
-    eine Fehlermeldung dem Formular aus.
-*/
-
-
 
 /**
  *  Export validation functions for further usage.
@@ -92,6 +89,7 @@ function checkLength(id, input, min, max) {
  */
 module.exports = {
     checkEmail,
+    checkNumber,
     checkLength,
     checkRequired
 }

@@ -6,8 +6,6 @@ const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const number = document.getElementById('number');
 
-
-
 // Show input error message
 function showError(input, message) {
   const formControl = input.parentElement;
@@ -34,7 +32,7 @@ function checkEmail(input) {
 }
 //Check Phonenumber
 function checkNumber(input) {
-  const re = /^0(2[1-246-7]|3[1-4]|4[13-4]|5[25-6]|6[1-2]|7[15-68-9]|8[17]|91)[0-9]{7}/;
+  const re = /(\b(0041|0)|\B\+41)(\s?\(0\))?(\s)?[1-9]{2}(\s)?[0-9]{3}(\s)?[0-9]{2}(\s)?[0-9]{2}\b/;
   if (re.test(input.value.trim())) {
     showSuccess(input);
   } else {
@@ -42,6 +40,8 @@ function checkNumber(input) {
     ALL_INPUT_VALID = false;
   }
 }
+
+//Check Genre
 
 
 // Check required fields
@@ -90,10 +90,8 @@ function validateForm(){
     checkLength(lastname, 3, 20);
     checkEmail(email);
     checkNumber(number);
-
   }
 }
-
 
 // Event listeners
 form.addEventListener('submit', function(e) {
