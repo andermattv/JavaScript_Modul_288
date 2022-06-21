@@ -43,11 +43,11 @@ function checkNumber(input) {
 }
 
 //Check Dropdown
-function getDropdown(input){
-  if(user === 0){
-    showError(input);
-  } else if (user >= 0){
+function checkDropdown(input){
+  if(user >= 0){
     showSuccess(input);
+  } else if (user === 0){
+    showError(input);
   }
 }
 
@@ -97,7 +97,7 @@ function validateForm(){
     checkLength(lastname, 3, 20);
     checkEmail(email);
     checkNumber(number);
-    getDropdown(dropdown);
+    checkDropdown(dropdown);
   }
 }
 

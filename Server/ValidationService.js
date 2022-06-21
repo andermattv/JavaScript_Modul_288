@@ -17,7 +17,10 @@ function validateUser(userObj) {
     result = validateLib.checkRequired("email", userObj.email);
     if (result.isNotValid) { return result; }
 
-    result = validateLib.checkNumber("number", userObj.number);
+    result = validateLib.checkRequired("number", userObj.number);
+    if (result.isNotValid) { return result; }
+
+    result = validateLib.checkRequired("dropdown", userObj.number);
     if (result.isNotValid) { return result; }
 
     //check length
@@ -33,6 +36,10 @@ function validateUser(userObj) {
 
     //check number
     result = validateLib.checkNumber("number", userObj.number);
+    if (result.isNotValid) { return result; }
+
+    //check number
+    result = validateLib.checkDropdown("dropdown", userObj.number);
     if (result.isNotValid) { return result; }
 
     return false;

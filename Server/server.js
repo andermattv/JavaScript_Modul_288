@@ -54,14 +54,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/register', (req, res) => {
 
     const HTTP_STATUS_NO_ACCEPTABLE = 406;
-    //Daten des Posts-Requests auslesen und zusätzlich eine User-id erzeugen
 
-    /* Aufgabe 1
-        a: Fügen Sie Eingabefelder für Vor- und Nachname hinzu
-        b: Fügen Sie ein Eingabefeld für eine Telefonnummer hinzu
-        c: Fügen Sie ein weiteres Passwortfeld (zur Bestätigung des
-            ersten Passworts) hinzu
-     */
     let userObj = {
         "id": uuidv4(),
         "username": req.body.user.username,
