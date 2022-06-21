@@ -40,21 +40,6 @@ function checkNumber(id,input) {
     }
     return result;
 }
-//Check Dropdown
-    function checkDropdown(id,input) {
-        let result = {
-            isNotValid: false,
-            msg: showSuccess(id)
-        }
-        if(user >= 0){
-            result = {
-                isNotValid: true,
-                msg: showError(id, 'Dropdown is required')
-            }
-        }
-        return result;
-    }
-
 // Check required fields
 function checkRequired(id, input) {
     //Default: is valid
@@ -106,6 +91,5 @@ module.exports = {
     checkEmail,
     checkNumber,
     checkLength,
-    checkDropdown,
     checkRequired
 }

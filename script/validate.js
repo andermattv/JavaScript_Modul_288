@@ -5,7 +5,7 @@ const firstname = document.getElementById('firstname');
 const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const number = document.getElementById('number');
-const dropdown = document.getElementById('dropdown');
+const genre = document.getElementById('genre');
 
 // Show input error message
 function showError(input, message) {
@@ -39,15 +39,6 @@ function checkNumber(input) {
   } else {
     showError(input, 'This Phone number is not valid.');
     ALL_INPUT_VALID = false;
-  }
-}
-
-//Check Dropdown
-function checkDropdown(input){
-  if(user >= 0){
-    showSuccess(input);
-  } else if (user === 0){
-    showError(input);
   }
 }
 
@@ -92,12 +83,11 @@ function getFieldName(input) {
 }
 
 function validateForm(){
-  if(!checkRequired([firstname, lastname, email, number, dropdown])){
+  if(!checkRequired([firstname, lastname, email, number, genre])){
     checkLength(firstname, 3, 15);
     checkLength(lastname, 3, 20);
     checkEmail(email);
     checkNumber(number);
-    checkDropdown(dropdown);
   }
 }
 

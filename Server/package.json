@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "registrationserver": "node Modul_307/Server/server.js"
+    "registrationserver": "node server.js"
   },
   "repository": {
     "type": "git",

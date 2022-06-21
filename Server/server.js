@@ -20,7 +20,7 @@ console.log(`Running at Port ${port}`);
 server.timeout = 1000 * 60 * 2; // 2 minutes
 
 //Warning: Korrekt setzen!!
-const staticPath = './Modul_307/Server/data';
+const staticPath = './data/';
 const registrationFile = staticPath+'registration.json';
 
 
@@ -57,9 +57,12 @@ app.post('/register', (req, res) => {
 
     let userObj = {
         "id": uuidv4(),
-        "username": req.body.user.username,
+        "firstname": req.body.user.firstname,
+        "lastname": req.body.user.lastname,
         "email": req.body.user.email,
-        "password": req.body.user.password
+        "genre": req.body.user.genre,
+        "number": req.body.user.number,
+        "comment": req.body.user.comment
     }
 
     let result = Validation.validateUser(userObj);
@@ -79,7 +82,7 @@ app.post('/register', (req, res) => {
             .catch(error => {
                 console.error(error);
             });
-        res.status(201).send(`User ${userObj.username} inserted!`);
+        res.status(201).send(`User ${userObj.firstname} ${userObj.lastname} inserted!`);
     }
 });
 

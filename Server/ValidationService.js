@@ -20,7 +20,10 @@ function validateUser(userObj) {
     result = validateLib.checkRequired("number", userObj.number);
     if (result.isNotValid) { return result; }
 
-    result = validateLib.checkRequired("dropdown", userObj.number);
+    result = validateLib.checkRequired("genre", userObj.genre);
+    if (result.isNotValid) { return result; }
+
+    result = validateLib.checkRequired("comment", userObj.comment);
     if (result.isNotValid) { return result; }
 
     //check length
@@ -38,9 +41,6 @@ function validateUser(userObj) {
     result = validateLib.checkNumber("number", userObj.number);
     if (result.isNotValid) { return result; }
 
-    //check number
-    result = validateLib.checkDropdown("dropdown", userObj.number);
-    if (result.isNotValid) { return result; }
 
     return false;
 }
