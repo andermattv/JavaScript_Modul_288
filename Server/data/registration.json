@@ -82,5 +82,32 @@
     "genre": "Tierfotografie",
     "number": "0793459867",
     "comment": "Hey"
+  },
+  {
+    "id": "7f1a253c-1906-40de-889f-5dfc2268cdba",
+    "firstname": "Céline",
+    "lastname": "Andermatt",
+    "email": "celine@gmail.com",
+    "genre": "Tierfotografie",
+    "number": "0795678987",
+    "comment": "Hello"
+  },
+  {
+    "id": "9959a84a-e425-4cc4-9aee-eadf563f8e11",
+    "firstname": "Céline",
+    "lastname": "Andermatt",
+    "email": "celine@gmail.com",
+    "genre": "Tierfotografie",
+    "number": "0795678987",
+    "comment": "Neu"
+  },
+  {
+    "id": "9b658ddb-09ab-4efa-8ecc-80dea4eca1ab",
+    "firstname": "Vivien",
+    "lastname": "Schmucki",
+    "email": "vivien@gmail.com",
+    "genre": "Portrait",
+    "number": "0793450978",
+    "comment": "Hey"
   }
 ]
